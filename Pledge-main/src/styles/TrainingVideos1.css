@@ -268,6 +268,7 @@
   width: 18px;
   height: 18px;
   margin: 0;
+  margin-top: 3px;
   cursor: pointer;
   background-color: #ffffff;
   border: 1px solid #e0e0e0;
@@ -283,6 +284,10 @@
   background-color: transparent;
   border-color: transparent;
   position: relative;
+  background-image: url('../assets/svg/checked-box-blue.svg');
+}
+
+.checkbox-input.second-state-onwards:checked {
   background-image: url('../assets/svg/Checkbox-checked.svg');
 }
 
@@ -303,7 +308,7 @@
   display: flex;
   flex-direction: column;
   gap: 12px;
-  margin-bottom: 40px; /* Added spacing before submit section */
+  margin-bottom: 0; /* Removed margin, spacing handled by submit section */
   resize: none;
 }
 
@@ -347,9 +352,10 @@
 .submit-section {
   display: flex;
   justify-content: flex-end;
-  align-items: center;
-  padding: 20px 0 20px 0; /* Reduced padding, spacing handled by margin */
+  align-items: flex-start;
+  padding: 0;
   width: 100%;
+  margin-top: 40px;
   margin-bottom: 68px; /* Added spacing before footer bottom to achieve total 128px */
 }
 
@@ -357,6 +363,50 @@
   width: 120px;
   height: 40px;
   padding-right: 40px;
+}
+
+/* Manager Undertaking Section */
+.manager-undertaking {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-bottom: 40px;
+}
+
+.manager-title {
+  font-family: "Samsung Interface", sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  color: #000000;
+}
+
+.manager-checkbox {
+  margin-top: 13px;
+}
+
+.manager-checkbox:checked {
+  background-image: url('../assets/svg/checked-box-blue.svg');
+}
+
+/* Final state manager checkbox uses regular checked svg */
+.final-state .manager-checkbox:checked {
+  background-image: url('../assets/svg/Checkbox-checked.svg');
+}
+
+/* Approve/Reject actions */
+.approval-actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 1px;
+  padding-right: 40px;
+}
+
+.reject-button,
+.approve-button {
+  width: 120px;
+  height: 40px;
+  cursor: pointer;
 }
 
 .submit-button {
@@ -376,16 +426,30 @@
   background: #0052cc;
 }
 
+/* Transfer Workflow Section */
+.transfer-workflow-section {
+  margin-top: -20px;
+  margin-left: -24px;
+  margin-right: -24px;
+  width: calc(100% + 48px);
+}
+
+.transfer-workflow-img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
 /* Footer Bottom Section */
 .footer-bottom {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  padding: 20px 24px 24px 24px; /* Adjusted to achieve 128px total spacing from comments */
+  padding: 45px 24px 24px 24px;
+}
+
+.footer-bottom.final-state {
+  padding: 114px 24px 24px 24px;
 }
 
 /* Responsive Design */

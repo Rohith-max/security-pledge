@@ -75,7 +75,7 @@ const Avatars = () => {
     <div className="avatars-container">
       <Header
         breadcrumb="My Workspace > Diversity, Equity & Inclusion Module Training Video"
-        title="SELF Essentials: Diversity, Equity & Inclusion Module - Employee Submission"
+        title="Work From Home - Security Pledge - RM Submit"
         onBackClick={handleBackClick}
         onClockClick={handleClockClick}
       />

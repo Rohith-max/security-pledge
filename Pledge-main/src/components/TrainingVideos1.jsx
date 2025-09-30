@@ -5,13 +5,34 @@ import SecurityPledge from "../assets/svg/security_pledge.svg";
 import SecurityPledgeInner from "../assets/svg/security-pledge-inner.svg";
 import PledgeBox from "../assets/svg/pledge-box.svg";
 import SubmitIcon from "../assets/svg/submit.svg";
+import ApproveButton from "../assets/svg/approve-button.svg";
+import RejectButton from "../assets/svg/reject-button.svg";
+import CheckedBoxBlue from "../assets/svg/checked-box-blue.svg";
+import TransferWorkflow from "../assets/svg/transfer-workflow.svg";
 
 const TrainingVideos = () => {
   const [isComplianceChecked, setIsComplianceChecked] = useState(false);
   const [comments, setComments] = useState("");
+  const [showManagerUndertaking, setShowManagerUndertaking] = useState(false);
+  const [isManagerChecked, setIsManagerChecked] = useState(false);
+  const [isApproved, setIsApproved] = useState(false);
 
   const handleComplianceCheck = () => {
     setIsComplianceChecked(!isComplianceChecked);
+  };
+
+  const handleSubmitClick = () => {
+    setShowManagerUndertaking(true);
+  };
+
+  const handleManagerCheck = () => {
+    setIsManagerChecked(prev => !prev);
+  };
+
+  const handleApproveClick = () => {
+    if (isManagerChecked) {
+      setIsApproved(true);
+    }
   };
 
   return (
@@ -64,7 +85,7 @@ const TrainingVideos = () => {
               type="checkbox"
               checked={isComplianceChecked}
               onChange={handleComplianceCheck}
-              className="checkbox-input"
+              className={`checkbox-input ${showManagerUndertaking ? 'second-state-onwards' : ''}`}
             />
             <span className="checkbox-text">
               I hereby acknowledge that I have knowingly and voluntarily, without duress or reservation of any kind, signed this Undertaking.
@@ -75,39 +96,112 @@ const TrainingVideos = () => {
 
       {/* Attached Footer Rectangle below main rectangle */}
       <div className="main-rectangle-footer">
-        {/* Comments Section */}
-        <div className="comments-section">
-          <div className="comments-label">Comment (Max 500 Chars)</div>
-          <textarea
-            className="comments-textbox"
-            value={comments}
-            onChange={(e) => setComments(e.target.value)}
-            placeholder="xxx-xxx-xx-xxx-x"
-            maxLength={500}
-          />
-        </div>
+        {!isApproved ? (
+          <>
+            {/* Manager Undertaking (appears after submit clicked) */}
+            {showManagerUndertaking && (
+              <div className="manager-undertaking">
+                <div className="manager-title">Undertaking by the Manager</div>
+                <label className="checkbox-container">
+                  <input
+                    type="checkbox"
+                    checked={isManagerChecked}
+                    onChange={handleManagerCheck}
+                    className="checkbox-input manager-checkbox"
+                    style={isManagerChecked ? { backgroundImage: `url(${CheckedBoxBlue})` } : {}}
+                  />
+                  <span className="checkbox-text">
+                  I as a reporting manager of the Employee is authorizing the Employee to carry laptop/Sample / Monitor or other assets etc outside office premises, since employee is working on SVPN / VDI as part remote working facility. Employee assumes full responsibility of the Company Asset as declared above.
+                  </span>
+                </label>
+              </div>
+            )}
+            {/* Comments Section */}
+            <div className="comments-section">
+              <div className="comments-label">Comment (Max 500 Chars)</div>
+              <textarea
+                className="comments-textbox"
+                value={comments}
+                onChange={(e) => setComments(e.target.value)}
+                placeholder="xxx-xxx-xx-xxx-x"
+                maxLength={500}
+              />
+            </div>
 
-        {/* Submit Section */}
-        <div className="submit-section">
-          <img
-            src={SubmitIcon}
-            alt="Submit"
-            className="submit-icon"
-          />
-        </div>
+            {/* Submit Section */}
+            <div className="submit-section">
+              {!showManagerUndertaking ? (
+                <img
+                  src={SubmitIcon}
+                  alt="Submit"
+                  className="submit-icon"
+                  onClick={isComplianceChecked ? handleSubmitClick : undefined}
+                  style={{ cursor: isComplianceChecked ? 'pointer' : 'not-allowed', opacity: isComplianceChecked ? 1 : 0.5 }}
+                />
+              ) : (
+                <div className="approval-actions">
+                  <img src={RejectButton} alt="Reject" className="reject-button" />
+                  <img 
+                    src={ApproveButton} 
+                    alt="Approve" 
+                    className="approve-button"
+                    onClick={handleApproveClick}
+                    style={{ cursor: isManagerChecked ? 'pointer' : 'not-allowed', opacity: isManagerChecked ? 1 : 0.5 }}
+                  />
+                </div>
+              )}
+            </div>
 
-        <div className="footer-bottom">
-          <div className="view-policies-link">
-            <img
-              src={ViewPoliciesIcon}
-              alt="View Policies"
-            />
-            <span></span>
-          </div>
-        </div>
+            {/* Transfer Workflow Section */}
+            <div className="transfer-workflow-section">
+              <img src={TransferWorkflow} alt="Transfer Workflow" className="transfer-workflow-img" />
+            </div>
+
+            {/* View Policies Section */}
+            <div className="footer-bottom">
+              <div className="view-policies-link">
+                <img
+                  src={ViewPoliciesIcon}
+                  alt="View Policies"
+                />
+                <span></span>
+              </div>
+            </div>
+          </>
+        ) : (
+          <>
+            {/* Final State - Only Manager Undertaking and View Policies */}
+            <div className="manager-undertaking final-state">
+              <div className="manager-title">Undertaking by the Manager</div>
+              <label className="checkbox-container">
+                <input
+                  type="checkbox"
+                  checked={isManagerChecked}
+                  onChange={handleManagerCheck}
+                  className="checkbox-input manager-checkbox"
+                />
+                <span className="checkbox-text">
+                I as a reporting manager of the Employee is authorizing the Employee to carry laptop/Sample / Monitor or other assets etc outside office premises, since employee is working on SVPN / VDI as part remote working facility. Employee assumes full responsibility of the Company Asset as declared above.
+                </span>
+              </label>
+            </div>
+
+            {/* View Policies Section */}
+            <div className="footer-bottom final-state">
+              <div className="view-policies-link">
+                <img
+                  src={ViewPoliciesIcon}
+                  alt="View Policies"
+                />
+                <span></span>
+              </div>
+            </div>
+          </>
+        )}
       </div>
     </div>
   );
 };
 
 export default TrainingVideos;
+
