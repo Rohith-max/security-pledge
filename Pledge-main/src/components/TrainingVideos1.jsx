@@ -1,0 +1,113 @@
+import React, { useState } from "react";
+import "../styles/TrainingVideos1.css";
+import ViewPoliciesIcon from "../assets/svg/viewpolicies.svg";
+import SecurityPledge from "../assets/svg/security_pledge.svg";
+import SecurityPledgeInner from "../assets/svg/security-pledge-inner.svg";
+import PledgeBox from "../assets/svg/pledge-box.svg";
+import SubmitIcon from "../assets/svg/submit.svg";
+
+const TrainingVideos = () => {
+  const [isComplianceChecked, setIsComplianceChecked] = useState(false);
+  const [comments, setComments] = useState("");
+
+  const handleComplianceCheck = () => {
+    setIsComplianceChecked(!isComplianceChecked);
+  };
+
+  return (
+    <div className="training-videos-container">
+      {/* Main Blue Rectangle Container */}
+      <div className="main-rectangle">
+        {/* Heading above Security Pledge */}
+        <div className="security-pledge-title">
+          Confidentiality Undertaking  FOR CARRYING COMPANY’S ASSET OUTSIDE OFFICE
+        </div>
+
+        {/* Training Progress Bar replaced with security pledge SVGs */}
+        <div className="training-progress-bar">
+          <div className="security-pledge-block">
+            <div className="security-pledge-wrapper">
+              <img className="outer-pledge" src={SecurityPledge} alt="Security Pledge" />
+              <img className="security-pledge-inner" src={SecurityPledgeInner} alt="Security Pledge Inner" />
+            </div>
+            <div className="pledge-box-frame">
+              <img className="pledge-box" src={PledgeBox} alt="Pledge Box" />
+              <div className="pledge-box-text">
+                In consideration of my employment with Samsung R&D Institute India - Bangalore Private Limited ("Company") and having allowed to carry Company's asset outside office ("remote working"), I undertake to the Company as follows :-
+              </div>
+              <div className="pledge-box-body">
+                <p>
+                  Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.
+                </p>
+                <ol>
+                  <li>
+                    The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham
+                  </li>
+                  <li>
+                    There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.
+                  </li>
+                  <li>
+                    There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary.
+                  </li>
+                </ol>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Text section removed as requested */}
+
+        {/* Compliance Checkbox */}
+        <div className="compliance-checkbox" style={{ marginBottom: '52px' }}>
+          <label className="checkbox-container">
+            <input
+              type="checkbox"
+              checked={isComplianceChecked}
+              onChange={handleComplianceCheck}
+              className="checkbox-input"
+            />
+            <span className="checkbox-text">
+              I hereby acknowledge that I have knowingly and voluntarily, without duress or reservation of any kind, signed this Undertaking.
+            </span>
+          </label>
+        </div>
+      </div>
+
+      {/* Attached Footer Rectangle below main rectangle */}
+      <div className="main-rectangle-footer">
+        {/* Comments Section */}
+        <div className="comments-section">
+          <div className="comments-label">Comment (Max 500 Chars)</div>
+          <textarea
+            className="comments-textbox"
+            value={comments}
+            onChange={(e) => setComments(e.target.value)}
+            placeholder="xxx-xxx-xx-xxx-x"
+            maxLength={500}
+          />
+        </div>
+
+        {/* Submit Section */}
+        <div className="submit-section">
+          <img
+            src={SubmitIcon}
+            alt="Submit"
+            className="submit-icon"
+          />
+        </div>
+
+        <div className="footer-bottom">
+          <div className="view-policies-link">
+            <img
+              src={ViewPoliciesIcon}
+              alt="View Policies"
+            />
+            <span></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default TrainingVideos;

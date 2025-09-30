@@ -1,0 +1,416 @@
+.training-videos-container {
+  padding: 16px 32px;
+  margin-top: -10px;
+  font-family: "Samsung Interface", sans-serif;
+  color: #000000;
+}
+
+.main-rectangle {
+  background: rgba(239, 246, 255, 1);
+  border-radius: 10px;
+  padding: 24px;
+  min-height: 600px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  height: 715px;
+}
+
+/* Footer rectangle attached below the main rectangle */
+.main-rectangle-footer {
+  width: 1456px;
+  min-height: 320px;
+  background: rgba(251, 252, 252, 1);
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  margin-left: 0; /* align x-axis with .main-rectangle */
+  margin-top: 0;
+  display: flex;
+  flex-direction: column;
+  padding: 24px;
+  box-sizing: border-box;
+  position: relative;
+  height: auto; /* Increased to accommodate 128px spacing */
+}
+
+/* Training Progress Bar */
+.training-progress-bar {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100%;
+  margin-bottom: 32px;
+  margin-top: 25px;
+  position: relative;
+}
+
+/* Container to stack pledge visuals vertically with left alignment */
+.security-pledge-block {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* keep left edges aligned */
+}
+
+/* Security Pledge visuals */
+.security-pledge-title {
+  font-weight: 700;
+  font-size: 16px;
+  
+}
+
+.security-pledge-wrapper {
+  position: relative;
+  width: 162px;
+  height: 40px;
+}
+
+.security-pledge-wrapper > img.outer-pledge {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.security-pledge-inner {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 123px;
+  height: 20px;
+}
+
+
+/* Pledge box overlay text */
+.pledge-box-frame {
+  position: relative;
+  display: inline-block;
+}
+
+.pledge-box-text {
+  position: absolute;
+  top: 40px; /* adjust as needed to fit inside the box */
+  left: 20px; /* reduced inner padding from the left */
+  right: 32px; /* keep some padding on the right */
+  font-weight: 700; /* bold */
+  font-size: 13px;
+  line-height: normal; /* no fixed line height for heading */
+  color: #000;
+}
+
+/* Body text inside pledge box (regular, Samsung Interface, 14px) */
+.pledge-box-body {
+  position: absolute;
+  top: 92px; /* placed below the bold line */
+  left: 20px; /* reduced inner padding from the left */
+  right: 32px;
+  font-family: "Samsung Interface", sans-serif;
+  font-weight: 400;
+  font-size: 13px; /* reduced per request */
+  line-height: 35px; /* exact line height */
+  color: #000;
+}
+
+.pledge-box-body p {
+  margin: 0 0 12px 0;
+  line-height: 35px;
+}
+
+.pledge-box-body ol {
+  margin: 0;
+  padding-left: 20px; /* number indent */
+  list-style-position: outside;
+}
+
+.pledge-box-body li {
+  margin-bottom: 10px;
+  line-height: 35px;
+}
+
+.pledge-box {
+  display: block;
+  width: 1400px;
+  height: 550px;
+  margin-top: 20px; /* 20px below the security pledge */
+  padding-left: -80px; /* temporary left offset per request */
+}
+
+.above-loader-icon {
+  position: absolute;
+  top: -30px;
+  left: 620px;
+  z-index: 10;
+}
+
+/* Training Heading */
+.training-heading {
+  font-family: "Samsung InterFace", sans-serif;
+  font-weight: 700;
+  font-style: bold;
+  font-size: 16px;
+  line-height: 120%;
+  letter-spacing: 0.25px;
+  color: #202224;
+  margin: 0;
+  padding: 0;
+}
+
+/* Progress Bar Container */
+.progress-bar-container {
+  display: flex;
+  align-items: center;
+  background: #e8e8e8;
+  border-radius: 30px;
+  padding: 7px 10px;
+  width: fit-content;
+  gap: 14px;
+  margin-left: 0;
+}
+
+.progress-module {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  flex-shrink: 0;
+  padding: 5px 7px;
+  border-radius: 0;
+  transition: all 0.3s ease;
+}
+
+.progress-module.active {
+  background: linear-gradient(36deg, #3fbce6 0%, #36a8de 100%);
+  margin: -7px -10px;
+  padding: 15px 18px;
+  border-radius: 30px;
+}
+
+.progress-module-text {
+  font-family: "Samsung InterFace", "Segoe UI", Arial, sans-serif;
+  font-size: 15px;
+  color: #000000;
+  line-height: 145%;
+  white-space: nowrap;
+  font-weight: 400;
+}
+
+.progress-module.active .progress-module-text {
+  color: #ffffff;
+  font-weight: 600;
+}
+
+.progress-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+/* Training Videos Text Section */
+.training-videos-text-section {
+  margin-top: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.training-videos-title {
+  font-family: "Samsung InterFace", sans-serif;
+  font-weight: 700;
+  font-style: bold;
+  font-size: 16px;
+  line-height: 120%;
+  letter-spacing: 0.25px;
+  color: #ffffff;
+  margin: 0;
+  padding: 0;
+}
+
+.training-videos-description {
+  font-family: "Samsung InterFace", sans-serif;
+  font-weight: 400;
+  font-style: regular;
+  font-size: 14px;
+  line-height: 140%;
+  letter-spacing: 0px;
+  vertical-align: middle;
+  color: #ffffff;
+  margin: 0;
+  padding: 0;
+}
+
+.completion-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+/* Compliance Checkbox */
+.compliance-checkbox {
+  margin-top: 0; /* ensure exact gap control */
+  padding-top: 0; /* remove extra padding above checkbox */
+  padding-left: 0;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.checkbox-container {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  cursor: pointer;
+  justify-content: flex-start;
+}
+
+.checkbox-input {
+  width: 18px;
+  height: 18px;
+  margin: 0;
+  cursor: pointer;
+  background-color: #ffffff;
+  border: 1px solid #e0e0e0;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: contain;
+}
+
+.checkbox-input:checked {
+  background-color: transparent;
+  border-color: transparent;
+  position: relative;
+  background-image: url('../assets/svg/Checkbox-checked.svg');
+}
+
+.checkbox-input:checked::after { content: none; }
+
+.checkbox-text {
+  font-family: "Samsung Interface", "Segoe UI", Arial, sans-serif;
+  font-size: 14px;
+  color: #000000;
+  line-height: 145%;
+  flex: 1;
+}
+
+/* Comments Section */
+.comments-section {
+  padding: 0px 30px 30px 0;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 40px; /* Added spacing before submit section */
+  resize: none;
+}
+
+.comments-label {
+  font-family: "Samsung Interface", sans-serif;
+  font-weight: 700;
+  font-size: 14px;
+  color: #000000;
+  margin: 0;
+}
+
+.comments-textbox {
+  width: 1320px;
+  height: 90px;
+  border-radius: 6px;
+  border: 0.5px solid #cccccc;
+  padding: 16px;
+  font-family: "Samsung Interface", sans-serif;
+  font-size: 14px;
+  color: #000000;
+  background-color: #ffffff;
+  opacity: 1;
+  outline: none;
+  text-align: left;
+  line-height: 1.4;
+  display: flex;
+  align-items: center;
+  resize: none;
+}
+
+.comments-textbox::placeholder {
+  color: #999999;
+  font-family: "Samsung Interface", sans-serif;
+  text-align: left;
+  line-height: 80px;
+  padding-top: 0;
+  margin: 0;
+}
+
+/* Submit Section */
+.submit-section {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 20px 0 20px 0; /* Reduced padding, spacing handled by margin */
+  width: 100%;
+  margin-bottom: 68px; /* Added spacing before footer bottom to achieve total 128px */
+}
+
+.submit-icon {
+  width: 120px;
+  height: 40px;
+  padding-right: 40px;
+}
+
+.submit-button {
+  background: #0066ff;
+  color: #ffffff;
+  border: none;
+  border-radius: 6px;
+  padding: 12px 24px;
+  font-family: "Samsung InterFace", sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.submit-button:hover {
+  background: #0052cc;
+}
+
+/* Footer Bottom Section */
+.footer-bottom {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 20px 24px 24px 24px; /* Adjusted to achieve 128px total spacing from comments */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .training-videos-container {
+    padding: 16px;
+  }
+
+  .main-rectangle {
+    padding: 16px;
+  }
+
+  .tab-container {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .toggle-container {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .item-content {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+}
