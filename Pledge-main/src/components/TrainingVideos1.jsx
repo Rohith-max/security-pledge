@@ -9,6 +9,8 @@ import ApproveButton from "../assets/svg/approve-button.svg";
 import RejectButton from "../assets/svg/reject-button.svg";
 import CheckedBoxBlue from "../assets/svg/checked-box-blue.svg";
 import TransferWorkflow from "../assets/svg/transfer-workflow.svg";
+import Splitter from "../assets/svg/splitter.svg";
+import Handle from "../assets/svg/handle.svg";
 
 const TrainingVideos = () => {
   const [isComplianceChecked, setIsComplianceChecked] = useState(false);
@@ -53,6 +55,10 @@ const TrainingVideos = () => {
             </div>
             <div className="pledge-box-frame">
               <img className="pledge-box" src={PledgeBox} alt="Pledge Box" />
+              <div className="pledge-box-splitter">
+                <img src={Splitter} alt="Splitter" />
+                <img className="pledge-box-handle" src={Handle} alt="Handle" />
+              </div>
               <div className="pledge-box-text">
                 In consideration of my employment with Samsung R&D Institute India - Bangalore Private Limited ("Company") and having allowed to carry Company's asset outside office ("remote working"), I undertake to the Company as follows :-
               </div>

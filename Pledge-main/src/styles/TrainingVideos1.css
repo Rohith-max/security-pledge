@@ -197,7 +197,7 @@
 
 .progress-module.active .progress-module-text {
   color: #ffffff;
-  font-weight: 600;
+  font-weight: 700;
 }
 
 .progress-icon {
@@ -321,8 +321,8 @@
 }
 
 .comments-textbox {
-  width: 1320px;
-  height: 90px;
+  width: 1360px;
+  height: 60px;
   border-radius: 6px;
   border: 0.5px solid #cccccc;
   padding: 16px;
@@ -334,17 +334,18 @@
   outline: none;
   text-align: left;
   line-height: 1.4;
-  display: flex;
-  align-items: center;
   resize: none;
 }
 
 .comments-textbox::placeholder {
-  color: #999999;
-  font-family: "Samsung Interface", sans-serif;
+  color: #000000;
+  font-family: 'Samsung InterFace', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 145%;
   text-align: left;
-  line-height: 80px;
-  padding-top: 0;
+  padding-top: 12px;
   margin: 0;
 }
 
@@ -362,7 +363,7 @@
 .submit-icon {
   width: 120px;
   height: 40px;
-  padding-right: 40px;
+  padding-right: 90px;
 }
 
 /* Manager Undertaking Section */
@@ -417,7 +418,7 @@
   padding: 12px 24px;
   font-family: "Samsung InterFace", sans-serif;
   font-size: 14px;
-  font-weight: 500;
+  font-weight: 400;
   cursor: pointer;
   transition: background-color 0.2s ease;
 }
