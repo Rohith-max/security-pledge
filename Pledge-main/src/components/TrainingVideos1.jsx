@@ -55,6 +55,20 @@ const TrainingVideos = () => {
             </div>
             <div className="pledge-box-frame">
               <img className="pledge-box" src={PledgeBox} alt="Pledge Box" />
+              {/* Compliance Checkbox */}
+              <div className="compliance-checkbox" style={{ marginBottom: '52px' }}>
+                <label className="checkbox-container">
+                  <input
+                    type="checkbox"
+                    checked={isComplianceChecked}
+                    onChange={handleComplianceCheck}
+                    className={`checkbox-input ${showManagerUndertaking ? 'second-state-onwards' : ''}`}
+                  />
+                  <span className="checkbox-text">
+                    I hereby acknowledge that I have knowingly and voluntarily, without duress or reservation of any kind, signed this Undertaking.
+                  </span>
+                </label>
+              </div>
               <div className="pledge-box-splitter">
                 <img src={Splitter} alt="Splitter" />
                 <img className="pledge-box-handle" src={Handle} alt="Handle" />
@@ -83,21 +97,6 @@ const TrainingVideos = () => {
         </div>
 
         {/* Text section removed as requested */}
-
-        {/* Compliance Checkbox */}
-        <div className="compliance-checkbox" style={{ marginBottom: '52px' }}>
-          <label className="checkbox-container">
-            <input
-              type="checkbox"
-              checked={isComplianceChecked}
-              onChange={handleComplianceCheck}
-              className={`checkbox-input ${showManagerUndertaking ? 'second-state-onwards' : ''}`}
-            />
-            <span className="checkbox-text">
-              I hereby acknowledge that I have knowingly and voluntarily, without duress or reservation of any kind, signed this Undertaking.
-            </span>
-          </label>
-        </div>
       </div>
 
       {/* Attached Footer Rectangle below main rectangle */}

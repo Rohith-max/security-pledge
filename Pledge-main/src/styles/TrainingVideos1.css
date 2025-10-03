@@ -91,7 +91,7 @@
 
 .pledge-box-text {
   position: absolute;
-  top: 40px; /* adjust as needed to fit inside the box */
+  top: 20px; /* adjust as needed to fit inside the box */
   left: 20px; /* reduced inner padding from the left */
   right: 32px; /* keep some padding on the right */
   font-weight: 700; /* bold */
@@ -103,7 +103,7 @@
 /* Body text inside pledge box (regular, Samsung Interface, 14px) */
 .pledge-box-body {
   position: absolute;
-  top: 92px; /* placed below the bold line */
+  top: 70px; /* placed below the bold line */
   left: 20px; /* reduced inner padding from the left */
   right: 32px;
   font-family: "Samsung Interface", sans-serif;
@@ -129,12 +129,44 @@
   line-height: 35px;
 }
 
+.pledge-box-frame {
+  position: relative;
+  display: inline-block;
+  margin-top: 20px;
+}
+
 .pledge-box {
   display: block;
   width: 1400px;
   height: 550px;
-  margin-top: 20px; /* 20px below the security pledge */
-  padding-left: -80px; /* temporary left offset per request */
+}
+
+.pledge-box-splitter {
+  position: absolute;
+  top: -50px;
+  right: 10px;
+  width: 10px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 5;
+}
+
+.pledge-box-splitter img:first-child {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.pledge-box-handle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  cursor: pointer;
+  z-index: 6;
 }
 
 .above-loader-icon {
@@ -249,11 +281,14 @@
 
 /* Compliance Checkbox */
 .compliance-checkbox {
-  margin-top: 0; /* ensure exact gap control */
-  padding-top: 0; /* remove extra padding above checkbox */
+  margin-top: 20px;
+  padding-top: 0;
   padding-left: 0;
   display: flex;
   justify-content: flex-start;
+  width: 100%;
+  position: relative;
+  z-index: 1;
 }
 
 .checkbox-container {
@@ -322,7 +357,7 @@
 
 .comments-textbox {
   width: 1360px;
-  height: 60px;
+  height: 120px;
   border-radius: 6px;
   border: 0.5px solid #cccccc;
   padding: 16px;
@@ -354,7 +389,7 @@
   display: flex;
   justify-content: flex-end;
   align-items: flex-start;
-  padding: 0;
+  padding: 0 90px;
   width: 100%;
   margin-top: 40px;
   margin-bottom: 68px; /* Added spacing before footer bottom to achieve total 128px */
@@ -400,7 +435,7 @@
   align-items: center;
   justify-content: flex-end;
   gap: 1px;
-  padding-right: 40px;
+  padding-right: 90px;
 }
 
 .reject-button,
